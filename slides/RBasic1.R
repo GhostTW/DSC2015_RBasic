@@ -69,7 +69,7 @@ x <- c(1, 2, "3")
 x
 x <- c("F","M","F","F")
 x
-x <- factor(c("F","M","F","F"), levels=c("F","M"))
+x <- factor(c("F","M","F","F"), levels=c("F","M")) #一定要給標籤才會知道 F M 的意義
 x
 as.integer(x)
 levels(x)
@@ -77,12 +77,13 @@ x <- factor(c("F","M","F","F"), levels=c("F"))
 x
 #農業社會 男尊女卑
 Argri <- factor(c("F","M","F","F"),order=TRUE,levels=c("F","M"))
+Argri
 #阿美族 女尊男卑
 Amis <- factor(c("F","M","F","F"),order=FALSE,levels=c("F","M"))
-
+Amis
 #應該要用
 Amis <- factor(c("F","M","F","F"),order=TRUE,levels=c("M","F"))
-
+Amis
 rank=factor(c("C","A","B","B","C","C"),order=TRUE,level=c("C","B","A"))
 rank
 rank[1]<rank[2]
@@ -129,10 +130,11 @@ x[x > 3]
 TaipeiTem
 HengchunTem
 TaipeiTem>20
+TaipeiTem[TaipeiTem>20]
 TaipeiHotMonths = TaipeiTem[TaipeiTem>20]
 SelectMonth= HengchunTem>20
 HengchunHotMonths = HengchunTem[SelectMonth==TRUE]
- TaipeiTem[7:9]
+TaipeiTem[7:9]
 mean(TaipeiTem[7:9])
 HengchunTem[7:9]
 mean(HengchunTem[7:9])
@@ -141,6 +143,8 @@ mean(TaipeiTem[c(1,2,12)])
 mean(HengchunTem[c(1,2,12)])
 TemTable=rbind(TaipeiTem,HengchunTem)
 TemTable
+cTemTable=cbind(TaipeiTem,HengchunTem)
+cTemTable
 #選取台北二月的溫度
 TemTable[1,2]
 #選取二月的溫度
